@@ -45,11 +45,11 @@ export default function Journal_main() {
           />
         </View>
       </View>
-      <View style={[styles.submitbtn, styles.shadowProp]}>
-        <TouchableOpacity onPress={submitHandler}>
+      <TouchableOpacity onPress={submitHandler}>
+        <View style={[styles.submitbtn, styles.shadowProp]}>
           <Text>Submit</Text>
-        </TouchableOpacity>
-      </View>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 }

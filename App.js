@@ -4,8 +4,8 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer} from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Home_main from './Components/Home_main'
-import Journal_main from './Components/Journal_main'
+import Home_main from './Components/Home_main';
+import Journal_main from './Components/Journal_main';
 import { FontAwesome } from '@expo/vector-icons';
 
 
