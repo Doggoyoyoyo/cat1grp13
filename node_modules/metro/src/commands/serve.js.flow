@@ -15,16 +15,15 @@ import type {YargArguments} from 'metro-config/src/configTypes.flow';
 import typeof Yargs from 'yargs';
 
 const {makeAsyncCommand, watchFile} = require('../cli-utils');
-const MetroApi = require('../index');
 const {loadConfig, resolveConfig} = require('metro-config');
 const {promisify} = require('util');
 
-module.exports = (): ({|
+module.exports = (): ({
   builder: (yargs: Yargs) => void,
   command: $TEMPORARY$string<'serve'>,
   description: string,
   handler: (argv: YargArguments) => void,
-|}) => ({
+}) => ({
   command: 'serve',
 
   description: 'Starts Metro on the given port, building bundles on the fly',
@@ -83,6 +82,9 @@ module.exports = (): ({|
       }
 
       const config = await loadConfig(argv);
+
+      // Inline require() to avoid circular dependency with ../index
+      const MetroApi = require('../index');
 
       // $FlowExpectedError YargArguments and RunBuildOptions are used interchangeable but their types are not yet compatible
       server = await MetroApi.runServer(config, (argv: RunServerOptions));

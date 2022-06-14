@@ -15,7 +15,6 @@ import type {YargArguments} from 'metro-config/src/configTypes.flow';
 import typeof Yargs from 'yargs';
 
 const {makeAsyncCommand} = require('../cli-utils');
-const MetroApi = require('../index');
 const TerminalReporter = require('../lib/TerminalReporter');
 const {loadConfig} = require('metro-config');
 const {Terminal} = require('metro-core');
@@ -23,12 +22,12 @@ const {Terminal} = require('metro-core');
 const term = new Terminal(process.stdout);
 const updateReporter = new TerminalReporter(term);
 
-module.exports = (): ({|
+module.exports = (): ({
   builder: (yargs: Yargs) => void,
   command: string,
   description: string,
   handler: (argv: YargArguments) => void,
-|}) => ({
+}) => ({
   command: 'build <entry>',
 
   description:
@@ -65,6 +64,9 @@ module.exports = (): ({|
     const config = await loadConfig(argv);
     // $FlowExpectedError YargArguments and RunBuildOptions are used interchangeable but their types are not yet compatible
     const options = (argv: RunBuildOptions);
+
+    // Inline require() to avoid circular dependency with ../index
+    const MetroApi = require('../index');
 
     await MetroApi.runBuild(config, {
       ...options,
