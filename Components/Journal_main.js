@@ -66,7 +66,7 @@ function Expression(props) {
         <Entypo
           name={props.feeling}
           size={props.emojisize}
-          color={props.chosenemoji == props.id ? "blue" : "black"}
+          color={props.chosenemoji == props.id ? "yellow" : "black"}
         />
       </TouchableOpacity>
     </View>
@@ -82,9 +82,9 @@ const styles = StyleSheet.create({
   },
   emoji_container: {
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "center",
     backgroundColor: "#D9D9D9",
-    width: "80%",
+    
     borderRadius: 5,
     marginTop: 20,
     marginBottom: 20,

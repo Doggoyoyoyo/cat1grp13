@@ -8,18 +8,20 @@ export default function Home_main() {
   return (
     <View style={styles.main}>
       <View style={styles.welcomeTextContainer}>
-        <Text style={styles.welcomeText}>Welcome,{name}!</Text>
+        <Text style={styles.welcomeText}>Welcome, {name}!</Text>
       </View>
-      <View style={styles.headerContainer}>
-        <View>
-          <Text>Notification</Text>
-        </View>
+      <View style={styles.notif}>
+        
         <View>
           <TouchableOpacity>
-            <Text>View all</Text>
+            <Text>View All Notifications</Text>
           </TouchableOpacity>
         </View>
+        
       </View>
+      <View style={styles.entries}>
+          <Text> something lol </Text>
+        </View>
     </View>
   );
 }
@@ -36,21 +38,33 @@ function NotificationCard(props) {
 const styles = StyleSheet.create({
   main: {
     flex: 1,
-    backgroundColor: "#D4FAA4",
-    alignItems: "center",
-    //justifyContent: "center",
+    backgroundColor: "#D4FAA4"
   },
   welcomeText: {
     fontSize: 40,
     fontWeight: "bold",
-    color: "#A10303",
+    color: "#3A6F3D",
+    textAlign: "center",
   },
   welcomeTextContainer: {
     marginTop: 20,
   },
-  headerContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    //alignContent: "space-between",
+  notif: {
+    marginTop: 5,
+    paddingRight: 10,
+    textAlign: "right",
+    fontSize: 15,
+    fontWeight: "bold",
+    color: "#2A582C",
   },
+  
+  entries: {
+    marginTop: 5,
+    padding: 20,
+    
+    fontSize: 15,
+    
+    color: "#2A582C",
+  },
+  
 });
