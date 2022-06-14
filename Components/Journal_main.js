@@ -1,5 +1,5 @@
 import "react-native-gesture-handler";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { Entypo } from "@expo/vector-icons";
@@ -9,10 +9,15 @@ export default function Journal_main() {
   const [chosenemoji, setChosenemoji] = useState(4);
   const [feelingsubmit, setfeelingsubmit] = useState(4);
   //feelingsubmit: 0 -> happy, 1-> neutral, 2-> sad, 4 -> not chosen yet.
+  useEffect(() => {
+    console.log(feelingsubmit);
+  }, [feelingsubmit]);
 
   const submitHandler = () => {
+    //console.log(feelingsubmit);
     setfeelingsubmit(chosenemoji);
-    console.log(feelingsubmit);
+
+    console.log(feelingsubmit);//use state havent change the value yet. need to use useEffect to time it.
   };
 
   const emojisize = 44;

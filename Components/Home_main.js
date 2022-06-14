@@ -2,9 +2,13 @@ import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { RotateInDownLeft } from "react-native-reanimated";
+import { title, content } from "./notification";
 
 export default function Home_main() {
   const name = "Tan";
+  const titles = title;
+  const contents = content;
+
   return (
     <View style={styles.main}>
       <View style={styles.welcomeTextContainer}>
@@ -51,6 +55,7 @@ const styles = StyleSheet.create({
   headerContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "space-between",
     //alignContent: "space-between",
   },
 });
