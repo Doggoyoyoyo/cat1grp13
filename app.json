@@ -1,4 +1,5 @@
 {
+  
   "expo": {
     "name": "cat1grp13",
     "slug": "cat1grp13",
@@ -9,7 +10,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -23,11 +24,17 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#000000"
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
+
+      }, 
+      "packagerOpts": {
+        "sourceExts": [ "js", "json", "ts", "tsx", "jsx", "vue"],
+        "config": "metro.config.js"
+      }
+
     }
   }
-}
