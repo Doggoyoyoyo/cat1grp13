@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { RotateInDownLeft } from "react-native-reanimated";
 import { title, content } from "./notification";
 
+
 export default function Home_main() {
   const name = "Tan";
   const titles = title;
@@ -21,51 +22,41 @@ export default function Home_main() {
           </TouchableOpacity>
         </View>
       </View>
-      <View style={styles.entries}>
-        <Text> something lol </Text>
-      </View>
-    </View>
-  );
-}
 
-function NotificationCard(props) {
-  return (
-    <View>
-      <Text>{props.title}</Text>
-      <Text>{props.content}</Text>
-    </View>
-  );
-}
+      <View style={styles.container}>
+          {/* Entries */}
+          <View style={styles.entriesWrapper}>
+          <Text style={styles.sectionTitle}> Entries </Text> </View>
+            <View style={styles.feelings}>
+            <Text> No entries for today </Text>
+          </View>
+          
+          
+        </View>
 
-const styles = StyleSheet.create({
-  main: {
+
+  container: {
     flex: 1,
-    backgroundColor: "#D4FAA4",
+    backgroundColor: '#fff',
+    margin: 20,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    overflow: 'hidden',
   },
-  welcomeText: {
-    fontSize: 40,
-    fontWeight: "bold",
-    color: "#3A6F3D",
-    textAlign: "center",
-  },
-  welcomeTextContainer: {
-    marginTop: 20,
-  },
-  notif: {
-    marginTop: 5,
-    paddingRight: 10,
-    textAlign: "right",
-    fontSize: 15,
-    fontWeight: "bold",
-    color: "#2A582C",
-  },
-
-  entries: {
-    marginTop: 5,
+  entriesWrapper: {
     padding: 20,
-
-    fontSize: 15,
-
-    color: "#2A582C",
+    backgroundColor: '#2A582C',
   },
+  sectionTitle: {
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  feelings: {
+    fontSize: 20,
+    color: 'red',
+    padding: 20,
+},
+
 });
